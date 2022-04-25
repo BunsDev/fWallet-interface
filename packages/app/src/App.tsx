@@ -105,8 +105,7 @@ function App() {
   return (
     <Providers>
       <Body>
-          <AppContentWithWallet />
-          // <AppContent />
+        <AppContentWithWallet />
       </Body>
     </Providers>
   );

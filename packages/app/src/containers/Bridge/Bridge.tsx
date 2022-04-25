@@ -845,12 +845,12 @@ const Bridge: React.FC<any> = () => {
                     </Row>
                     <Row style={{ justifyContent: "space-between" }}>
                       <Typo2 style={{ color: "#84888d" }}>
-                        Max bridge amount
+                        Maximum Amount
                       </Typo2>
                       <Typo2
                         style={{
                           color:
-                            inputError === "Above maximum amount"
+                            inputError === "Above maximum."
                               ? "red"
                               : "inherit",
                         }}
@@ -864,12 +864,12 @@ const Bridge: React.FC<any> = () => {
                     </Row>
                     <Row style={{ justifyContent: "space-between" }}>
                       <Typo2 style={{ color: "#84888d" }}>
-                        Min Bridge amount
+                        Minimum Amount
                       </Typo2>
                       <Typo2
                         style={{
                           color:
-                            inputError === "Below minimum amount"
+                            inputError === "Below minimum."
                               ? "red"
                               : "inherit",
                         }}
@@ -882,7 +882,7 @@ const Bridge: React.FC<any> = () => {
                       </Typo2>
                     </Row>
                     <Row style={{ justifyContent: "space-between" }}>
-                      <Typo2 style={{ color: "#84888d" }}>Minimum fee</Typo2>
+                      <Typo2 style={{ color: "#84888d" }}>Minimum Fee</Typo2>
                       <Typo2>
                         {selectedToken
                           ? `${formatSimpleValue(
