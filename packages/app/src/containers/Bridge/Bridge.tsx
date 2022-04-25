@@ -845,7 +845,7 @@ const Bridge: React.FC<any> = () => {
                     </Row>
                     <Row style={{ justifyContent: "space-between" }}>
                       <Typo2 style={{ color: "#84888d" }}>
-                        Maximum Amount
+                        Max bridge amount
                       </Typo2>
                       <Typo2
                         style={{
