@@ -105,27 +105,8 @@ function App() {
   return (
     <Providers>
       <Body>
-        {resolutionType === "mobile" || resolutionType === "tablet" ? (
-          <Column
-            style={{
-              width: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              alt="fwallet"
-              style={{ width: "15rem" }}
-              src={fWalletLogoImg}
-            />
-            <Spacer />
-            <Heading1>Resolution not supported</Heading1>
-            <Heading3>Mobile is coming soon!</Heading3>
-          </Column>
-        ) : (
           <AppContentWithWallet />
           // <AppContent />
-        )}
       </Body>
     </Providers>
   );
