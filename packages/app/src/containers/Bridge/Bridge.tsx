@@ -850,7 +850,7 @@ const Bridge: React.FC<any> = () => {
                       <Typo2
                         style={{
                           color:
-                            inputError === "Above maximum."
+                            inputError === "Above maximum amount"
                               ? "red"
                               : "inherit",
                         }}
@@ -869,7 +869,7 @@ const Bridge: React.FC<any> = () => {
                       <Typo2
                         style={{
                           color:
-                            inputError === "Below minimum."
+                            inputError === "Below minimum amount"
                               ? "red"
                               : "inherit",
                         }}
