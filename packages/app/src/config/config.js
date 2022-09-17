@@ -1,15 +1,15 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 const config = {
   providers: [
-    {
-      // http: "https://xapi.fantom.network/api",
-      http:
-        process.env.USE_PROXY === "true"
-          ? "/api"
-          : "https://xapi-nodea.fantom.network/",
-      // for subscriptions
-      ws: "",
-    },
+    // {
+    //   // http: "https://xapi.fantom.network/api",
+    //   http:
+    //     process.env.USE_PROXY === "true"
+    //       ? "/api"
+    //       : "https://xapi-nodea.fantom.network/",
+    //   // for subscriptions
+    //   ws: "",
+    // },
     {
       // http: "https://xapi.fantom.network/api",
       http:
