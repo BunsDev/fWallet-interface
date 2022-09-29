@@ -2,19 +2,16 @@ import useRestApi from "./useRestApi";
 import { useEffect, useState } from "react";
 
 export const UNSTOPPABLE_DOMAIN_BASEURL =
-  "https://unstoppabledomains.g.alchemy.com";
-export const UNSTOPPABLE_DOMAINS_DIRECT_BASEURL =
   "https://resolve.unstoppabledomains.com";
 
 export enum UNSTOPPABLE_DOMAINS_METHODS {
   GET_DOMAIN_RECORDS = "/domains",
   GET_SUPPORTED_TLDS = "/supported_tlds",
 }
-const token = process.env.REACT_APP_ALCHEMY_TOKEN;
+const token = process.env.REACT_APP_UD_TOKEN;
 
 const useUnstoppableDomains = () => {
   const { get } = useRestApi(UNSTOPPABLE_DOMAIN_BASEURL);
-  const { get: getDirect } = useRestApi(UNSTOPPABLE_DOMAINS_DIRECT_BASEURL);
   const [tlds, setTlds] = useState([
     "crypto",
     "coin",
@@ -43,7 +40,7 @@ const useUnstoppableDomains = () => {
   };
 
   const getSupportedTlds = () => {
-    return getDirect({
+    return get({
       path: UNSTOPPABLE_DOMAINS_METHODS.GET_SUPPORTED_TLDS,
     });
   };
