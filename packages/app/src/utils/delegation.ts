@@ -3,8 +3,8 @@ import { BigNumber } from "@ethersproject/bignumber";
 
 export const MIN_LOCKUP_DAYS = 14;
 export const DAY_IN_SECONDS = 60 * 60 * 24;
-export const BASE_APR = 0.042;
-export const LOCK_APR = 0.0981;
+export const BASE_APR = 0.01804; //0.042
+export const LOCK_APR = 0.042173; //0.0981
 
 export interface Validators {
   stakers: Validator[];
