@@ -39,6 +39,7 @@ import InfoModal from "./components/InfoModal";
 import config from "./config/config";
 import { switchToChain } from "./web3/events";
 import Preferences from "./containers/Preferences";
+import * as Fathom from "fathom-client";
 
 Bugsnag.start({
   apiKey: process.env.REACT_APP_BUGSNAG_API_KEY,
@@ -47,6 +48,8 @@ Bugsnag.start({
   collectUserIp: false,
   plugins: [new BugsnagPluginReact()],
 });
+
+Fathom.load(process.env.REACT_APP_FATHOM_SITEID);
 
 const AppContent: React.FC<any> = () => {
   const location = useLocation();
@@ -105,6 +108,10 @@ const AppContent: React.FC<any> = () => {
     }
     onDismissWrongChainSelected();
   }, [correctChainLoaded]);
+
+  useEffect(() => {
+    Fathom.trackPageview();
+  }, [location]);
 
   return (
     <>
