@@ -36,10 +36,9 @@ const WithdrawRequestRow: React.FC<any> = ({
   );
 
   const unlocksIn = withdrawLockTimeLeft(
-    formatHexToInt(withdrawRequest.createdTime)
+    Date.now() / 1000 - (60 * 60 * 24 * 8 + 3660)
   );
-  const isUnlocked =
-    withdrawDaysLockedLeft(formatHexToInt(withdrawRequest.createdTime)) <= 0;
+  const isUnlocked = unlocksIn.every((value) => value === 0);
   const formattedAmountToWithdraw = toFormattedBalance(
     hexToUnit(withdrawRequest.amount)
   );

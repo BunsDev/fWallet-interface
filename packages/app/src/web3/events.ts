@@ -136,7 +136,7 @@ export const switchToChain = async (provider: any, chainId: number) => {
   }
 
   try {
-    await window.ethereum.request({
+    await (window as any).ethereum.request({
       method: "wallet_switchEthereumChain",
       params: [{ chainId: networkDetails.chainId }],
     });
@@ -144,7 +144,7 @@ export const switchToChain = async (provider: any, chainId: number) => {
     // This error code indicates that the chain has not been added to MetaMask.
     if (switchError.code === 4902) {
       try {
-        await window.ethereum.request({
+        await (window as any).ethereum.request({
           method: "wallet_addEthereumChain",
           params: [networkDetails],
         });
@@ -159,7 +159,7 @@ export const switchToChain = async (provider: any, chainId: number) => {
 };
 
 export const promptWeb3WalletUse = async () => {
-  await window.ethereum.request({
+  await (window as any).ethereum.request({
     method: "wallet_requestPermissions",
     params: [
       {

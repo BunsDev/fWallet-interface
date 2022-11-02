@@ -240,7 +240,7 @@ const WalletSelect: React.FC<any> = ({
     if (wallet.providerType === "browser") {
       if (
         wallet.address.toLowerCase() !==
-        window.ethereum.selectedAddress.toLowerCase()
+        (window as any).ethereum.selectedAddress.toLowerCase()
       ) {
         setWarning(
           `Please select account ${wallet.address} in web3 wallet to continue`

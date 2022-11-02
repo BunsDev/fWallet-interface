@@ -67,7 +67,7 @@ if (process.env.REACT_APP_USE === "testnet") {
       http:
         process.env.USE_PROXY === "true"
           ? "/api"
-          : "https://xapi.testnet.fantom.network/api/",
+          : "https://dev.testnet.fantom.network/api/",
       // for subscriptions
       ws: "",
     },
