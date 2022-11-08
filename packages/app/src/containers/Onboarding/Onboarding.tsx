@@ -587,15 +587,15 @@ const SelectLedgerAccountModal: React.FC<any> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   setLedgerAddresses([]);
-  //   setIsLoading(true);
-  //   listAddresses(startingIndex)
-  //     .then((addresses) => setLedgerAddresses(addresses))
-  //     .catch(onDismiss)
-  //     .finally(() => setIsLoading(false));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [startingIndex]);
+  useEffect(() => {
+    setLedgerAddresses([]);
+    setIsLoading(true);
+    listAddresses(startingIndex)
+      .then((addresses) => setLedgerAddresses(addresses))
+      .catch(onDismiss)
+      .finally(() => setIsLoading(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startingIndex]);
 
   return (
     <Modal onDismiss={onDismiss}>
@@ -603,7 +603,7 @@ const SelectLedgerAccountModal: React.FC<any> = ({
       <Spacer />
       <ContentBox
         style={{
-          width: "90%",
+          minWidth: "500px",
           display: "flex",
           flexDirection: "column",
           backgroundColor: color.primary.black(),
